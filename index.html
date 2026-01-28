@@ -90,13 +90,13 @@
 <!-- View Toggle -->
 <div class="fixed top-24 left-1/2 -translate-x-1/2 z-40">
   <div class="flex items-center bg-white rounded-full p-1.5 shadow-lg border border-gray-200">
-    <button data-view="sales" class="toggle-btn active">Sales</button>
-    <button data-view="cs" class="toggle-btn">Customer Service</button>
+    <button data-view="sales" class="toggle-btn">Sales</button>
+    <button data-view="cs" class="toggle-btn active">Customer Service</button>
   </div>
 </div>
 
 <!-- SALES VIEW -->
-<div data-view="sales" class="view-content active">
+<div data-view="sales" class="view-content">
 
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-brand-bg via-brand-bg/95 to-gray-50">
@@ -1374,7 +1374,7 @@
 
 
 <!-- CUSTOMER SERVICE VIEW -->
-<div data-view="cs" class="view-content">
+<div data-view="cs" class="view-content active">
 
 <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-brand-bg via-brand-bg/95 to-gray-50">
   <div class="absolute inset-0 bg-gradient-to-b from-brand-primary/5 via-transparent to-transparent"></div>
@@ -3166,10 +3166,10 @@ function showMacroTab(tabName) {
             </div>
           </div>
           <div class="mb-8">
-            <p class="text-5xl font-bold text-gray-900 mb-2">$2,500<span class="text-2xl text-gray-500">/mo</span></p>
+            <p class="text-5xl font-bold text-gray-900 mb-2">$3,000<span class="text-2xl text-gray-500">/mo</span></p>
           </div>
           <div class="space-y-3 mb-8">
-            
+
             <div class="flex items-start gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary flex-shrink-0 mt-0.5"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
               <p class="text-gray-700">40 hrs/week on your schedule</p>
@@ -3222,7 +3222,7 @@ function showMacroTab(tabName) {
             </div>
           </div>
           <div class="mb-8">
-            <p class="text-5xl font-bold text-gray-900 mb-2">$3,250<span class="text-2xl text-gray-500">/mo</span></p>
+            <p class="text-5xl font-bold text-gray-900 mb-2">$3,500<span class="text-2xl text-gray-500">/mo</span></p>
           </div>
           <div class="space-y-3 mb-8">
             
@@ -3275,12 +3275,13 @@ function showMacroTab(tabName) {
           </div>
           <div class="mb-8">
             <p class="text-5xl font-bold text-gray-900 mb-2">$2.50<span class="text-2xl text-gray-500">/ticket</span></p>
+            <p class="text-sm text-gray-500 mt-1">$1,000/mo base retainer</p>
           </div>
           <div class="space-y-3 mb-8">
 
             <div class="flex items-start gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-brand-primary flex-shrink-0 mt-0.5"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.801 10A10 10 0 1 1 17 3.335"></path><path d="m9 11 3 3L22 4"></path></svg>
-              <p class="text-gray-700">$2.50 per ticket solved</p>
+              <p class="text-gray-700">$1,000/mo retainer + $2.50 per ticket solved</p>
             </div>
 
             <div class="flex items-start gap-3">
@@ -3440,9 +3441,9 @@ function showMacroTab(tabName) {
   const urlParams = new URLSearchParams(window.location.search);
   const urlView = urlParams.get('view');
   const savedView = localStorage.getItem(STORAGE_KEY);
-  const initialView = urlView || savedView || 'sales';
+  const initialView = urlView || savedView || 'cs';
 
-  if (initialView !== 'sales') {
+  if (initialView !== 'cs') {
     toggleView(initialView);
   }
 })();
